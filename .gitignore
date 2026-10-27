@@ -1,0 +1,45 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build
+dist/
+**/dist/
+target/
+**/target/
+apps/desktop/src-tauri/binaries/relay-engine*
+!apps/desktop/src-tauri/binaries/.gitkeep
+
+# Engine
+engine/relay-engine
+*.exe
+*.test
+*.out
+
+# Data / secrets
+.relay/
+**/.relay/
+**/secrets/
+*.db
+*.secret
+
+# IDE / OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+.env
+.env.*
+
+# Logs
+*.log
+npm-debug.log*
+
+# Coverage
+coverage/
+
+# Local cargo cache (CI/dev workaround)
+.cargo-home/
+
+# Local tool binaries and dev-bridge data
+.tools/

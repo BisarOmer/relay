@@ -1,0 +1,131 @@
+{
+  "memory": 0,
+  "storage": 1316,
+  "reserved_memory": 0,
+  "reserved_storage": 0,
+  "accounts": 1,
+  "ha_assets": 0,
+  "api": {
+    "level": 5,
+    "total": 7,
+    "errors": 1
+  },
+  "server_id": "ND3FYQ5MHA2W45ZBUJOKL3HWEVE4UBSUBZYEXJ4AGPRPDHJR3CKQ5QFE",
+  "now": "2026-10-27T21:08:08.756861Z",
+  "config": {
+    "max_memory": 14495514624,
+    "max_storage": 151820322816,
+    "store_dir": ".tools/js/jetstream",
+    "sync_interval": 120000000000,
+    "strict": true
+  },
+  "limits": {
+    "default_max_consumers": 1000
+  },
+  "streams": 1,
+  "consumers": 1,
+  "messages": 25,
+  "bytes": 1316,
+  "account_details": [
+    {
+      "name": "$G",
+      "id": "$G",
+      "memory": 0,
+      "storage": 1316,
+      "reserved_memory": 18446744073709551615,
+      "reserved_storage": 18446744073709551615,
+      "accounts": 0,
+      "ha_assets": 0,
+      "api": {
+        "level": 0,
+        "total": 7,
+        "errors": 1
+      },
+      "stream_detail": [
+        {
+          "name": "ORDERS",
+          "created": "2026-10-27T21:00:02.67736Z",
+          "cluster": {
+            "leader": "relay-local"
+          },
+          "config": {
+            "name": "ORDERS",
+            "subjects": [
+              "orders.\u003e"
+            ],
+            "retention": "limits",
+            "max_consumers": -1,
+            "max_msgs": -1,
+            "max_bytes": -1,
+            "max_age": 3600000000000,
+            "max_msgs_per_subject": -1,
+            "max_msg_size": -1,
+            "discard": "old",
+            "storage": "file",
+            "num_replicas": 1,
+            "duplicate_window": 120000000000,
+            "compression": "none",
+            "allow_direct": true,
+            "mirror_direct": false,
+            "sealed": false,
+            "deny_delete": false,
+            "deny_purge": false,
+            "allow_rollup_hdrs": false,
+            "consumer_limits": {},
+            "allow_msg_ttl": false,
+            "metadata": {
+              "_nats.req.level": "0"
+            }
+          },
+          "state": {
+            "messages": 25,
+            "bytes": 1316,
+            "first_seq": 1,
+            "first_ts": "2026-10-27T21:00:02.719604Z",
+            "last_seq": 25,
+            "last_ts": "2026-10-27T21:00:03.012428Z",
+            "num_subjects": 1,
+            "consumer_count": 1
+          },
+          "consumer_detail": [
+            {
+              "stream_name": "ORDERS",
+              "name": "shipping",
+              "created": "2026-10-27T21:00:02.698588Z",
+              "config": {
+                "durable_name": "shipping",
+                "name": "shipping",
+                "deliver_policy": "all",
+                "ack_policy": "explicit",
+                "ack_wait": 30000000000,
+                "max_deliver": -1,
+                "replay_policy": "instant",
+                "max_waiting": 512,
+                "max_ack_pending": 1000,
+                "num_replicas": 0,
+                "metadata": {
+                  "_nats.req.level": "0"
+                },
+                "pause_until": "0001-01-01T00:00:00Z"
+              },
+              "delivered": {
+                "consumer_seq": 0,
+                "stream_seq": 0
+              },
+              "ack_floor": {
+                "consumer_seq": 0,
+                "stream_seq": 0
+              },
+              "num_ack_pending": 0,
+              "num_redelivered": 0,
+              "num_waiting": 0,
+              "num_pending": 25,
+              "ts": "2026-10-27T21:08:08.756878Z"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "total": 1
+}

@@ -1,0 +1,99 @@
+{
+  "server_id": "NA5AFVDMQKWOZCUOJKZEWGO7CPXELHZB7EEMWCJDRQSXBDSZWXAMJLHY",
+  "server_name": "gx",
+  "version": "2.15.2",
+  "proto": 1,
+  "go": "go1.27.3",
+  "host": "0.0.0.0",
+  "port": 4226,
+  "max_connections": 65536,
+  "ping_interval": 120000000000,
+  "ping_max": 2,
+  "http_host": "0.0.0.0",
+  "http_port": 8226,
+  "http_base_path": "",
+  "https_port": 0,
+  "auth_timeout": 2,
+  "max_control_line": 4096,
+  "max_payload": 1048576,
+  "max_pending": 67108864,
+  "cluster": {
+    "name": "EAST"
+  },
+  "gateway": {
+    "name": "EAST",
+    "host": "127.0.0.1",
+    "port": 7226,
+    "auth_timeout": 2,
+    "tls_timeout": 2,
+    "gateways": [
+      {
+        "name": "WEST",
+        "urls": [
+          "127.0.0.1:7227"
+        ]
+      }
+    ]
+  },
+  "leaf": {},
+  "mqtt": {},
+  "websocket": {},
+  "jetstream": {},
+  "tls_timeout": 2,
+  "write_deadline": 10000000000,
+  "start": "2026-10-27T21:09:55.477205Z",
+  "now": "2026-10-27T21:09:58.514631Z",
+  "uptime": "3s",
+  "mem": 20283392,
+  "cores": 12,
+  "gomaxprocs": 12,
+  "cpu": 0.4,
+  "connections": 0,
+  "total_connections": 0,
+  "routes": 0,
+  "remotes": 0,
+  "leafnodes": 0,
+  "in_msgs": 2,
+  "in_bytes": 1641,
+  "in_client_msgs": 0,
+  "in_client_bytes": 0,
+  "out_msgs": 2,
+  "out_bytes": 1641,
+  "out_client_msgs": 0,
+  "out_client_bytes": 0,
+  "slow_consumers": 0,
+  "stale_connections": 0,
+  "stalled_clients": 0,
+  "subscriptions": 61,
+  "http_req_stats": {
+    "/healthz": 1,
+    "/varz": 1
+  },
+  "config_load_time": "2026-10-27T21:09:55.477205Z",
+  "config_digest": "sha256:7797dc590b2e5e7da58c1299c6aa72154cce6aa7205111bce3ff01601f2d2fdb",
+  "feature_flags": {
+    "js_ack_fc_v2": false,
+    "js_api_reply_v2": false,
+    "js_raft_delete_range": true,
+    "js_snapshot_sources": false
+  },
+  "system_account": "$SYS",
+  "slow_consumer_stats": {
+    "clients": 0,
+    "routes": 0,
+    "gateways": 0,
+    "leafs": 0
+  },
+  "stale_connection_stats": {
+    "clients": 0,
+    "routes": 0,
+    "gateways": 0,
+    "leafs": 0
+  },
+  "disk_io_wait_stats": {
+    "waiters": 0,
+    "waits": 0,
+    "wait_time": 0,
+    "max_wait_time": 0
+  }
+}

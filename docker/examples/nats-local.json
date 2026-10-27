@@ -1,0 +1,16 @@
+{
+  "name": "Local NATS",
+  "brokerType": "nats",
+  "environment": "local",
+  "servers": ["nats://127.0.0.1:4222"],
+  "auth": { "method": "none" },
+  "tls": { "enabled": false, "insecureSkipVerify": false },
+  "timeoutMs": 10000,
+  "reconnect": {
+    "enabled": true,
+    "initialBackoffMs": 500,
+    "maxBackoffMs": 10000,
+    "maxAttempts": 20
+  },
+  "readOnly": false
+}

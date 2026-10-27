@@ -1,0 +1,55 @@
+{
+  "server_id": "NA5AFVDMQKWOZCUOJKZEWGO7CPXELHZB7EEMWCJDRQSXBDSZWXAMJLHY",
+  "now": "2026-10-27T21:09:58.546962Z",
+  "name": "EAST",
+  "host": "127.0.0.1",
+  "port": 7226,
+  "outbound_gateways": {
+    "WEST": {
+      "configured": true,
+      "connection": {
+        "cid": 5,
+        "kind": "Gateway",
+        "ip": "127.0.0.1",
+        "port": 7227,
+        "start": "2026-10-28T00:09:56.479078+03:00",
+        "last_activity": "2026-10-28T00:09:57.731907+03:00",
+        "rtt": "752µs",
+        "uptime": "2s",
+        "idle": "0s",
+        "pending_bytes": 0,
+        "in_msgs": 0,
+        "out_msgs": 2,
+        "in_bytes": 0,
+        "out_bytes": 1641,
+        "subscriptions": 53,
+        "name": "NA7XPX3DIYWOJZDGSC6IZAOAEOZZ6DJYVJJ5Y5QGH2WG6DDGMHLDQL6Z"
+      }
+    }
+  },
+  "inbound_gateways": {
+    "WEST": [
+      {
+        "configured": false,
+        "connection": {
+          "cid": 6,
+          "kind": "Gateway",
+          "ip": "127.0.0.1",
+          "port": 57996,
+          "start": "2026-10-28T00:09:56.479256+03:00",
+          "last_activity": "2026-10-28T00:09:57.732324+03:00",
+          "rtt": "398µs",
+          "uptime": "2s",
+          "idle": "0s",
+          "pending_bytes": 0,
+          "in_msgs": 2,
+          "out_msgs": 0,
+          "in_bytes": 1641,
+          "out_bytes": 0,
+          "subscriptions": 0,
+          "name": "NA7XPX3DIYWOJZDGSC6IZAOAEOZZ6DJYVJJ5Y5QGH2WG6DDGMHLDQL6Z"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens. Utilities reference these variables, so themes only swap
+ * values on :root. Keep semantic names; never use raw hex in components.
+ */
+@theme {
+  --font-sans: "Inter", "IBM Plex Sans", -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "IBM Plex Mono", "SF Mono", ui-monospace, monospace;
+
+  --color-bg: #0b0e13;
+  --color-bg-elevated: #161b24;
+  --color-bg-panel: #10141b;
+  --color-bg-inset: #0d1117;
+  --color-bg-hover: #1a212d;
+  --color-bg-active: #202938;
+  --color-border: #222b39;
+  --color-border-strong: #313d50;
+  --color-fg: #e6ebf2;
+  --color-fg-muted: #9aa6b8;
+  --color-fg-subtle: #6a778b;
+  --color-accent: #4c9ffe;
+  --color-accent-fg: #04121f;
+  --color-success: #3fcf8e;
+  --color-warning: #e5b454;
+  --color-danger: #f2727a;
+  --color-info: #7aa7ff;
+  --color-production: #f2727a;
+  --color-chart-1: #4c9ffe;
+  --color-chart-2: #3fcf8e;
+  --color-chart-3: #c792ea;
+  --color-chart-4: #e5b454;
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+
+  --shadow-overlay: 0 24px 64px -12px rgb(0 0 0 / 0.55), 0 0 0 1px rgb(255 255 255 / 0.04);
+
+  --animate-fade-in: fade-in 120ms ease-out;
+  --animate-slide-up: slide-up 160ms ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+:root {
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --color-bg: #f6f7f9;
+  --color-bg-elevated: #ffffff;
+  --color-bg-panel: #fbfbfc;
+  --color-bg-inset: #f0f2f5;
+  --color-bg-hover: #eceff3;
+  --color-bg-active: #e3e8ef;
+  --color-border: #dde2e9;
+  --color-border-strong: #c6cdd8;
+  --color-fg: #151a22;
+  --color-fg-muted: #4d5869;
+  --color-fg-subtle: #758195;
+  --color-accent: #1f6fe5;
+  --color-accent-fg: #ffffff;
+  --color-success: #138a5a;
+  --color-warning: #a66b00;
+  --color-danger: #c9353f;
+  --color-info: #3563d9;
+  --color-production: #c9353f;
+  --color-chart-1: #1f6fe5;
+  --color-chart-2: #138a5a;
+  --color-chart-3: #8a4fd0;
+  --color-chart-4: #a66b00;
+  --shadow-overlay: 0 24px 64px -12px rgb(15 23 42 / 0.25), 0 0 0 1px rgb(15 23 42 / 0.06);
+}
+
+:root[data-density="compact"] {
+  font-size: 13px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.45;
+  background: var(--color-bg);
+  color: var(--color-fg);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "cv11", "ss01", "tnum" 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-strong);
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-accent) 30%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

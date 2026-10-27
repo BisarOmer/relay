@@ -1,0 +1,22 @@
+{
+  "server_id": "NCVOYOJCJGRZFLXLSXYYENXAYOOAWPV4GYQOILZTRI7XQC4KQKL7PVNY",
+  "now": "2026-10-27T21:08:49.92215Z",
+  "leafnodes": 1,
+  "leafs": [
+    {
+      "id": 9,
+      "name": "edge",
+      "is_spoke": false,
+      "account": "$G",
+      "ip": "127.0.0.1",
+      "port": 57956,
+      "rtt": "1.123ms",
+      "in_msgs": 0,
+      "out_msgs": 0,
+      "in_bytes": 0,
+      "out_bytes": 0,
+      "subscriptions": 5,
+      "compression": "s2_uncompressed"
+    }
+  ]
+}

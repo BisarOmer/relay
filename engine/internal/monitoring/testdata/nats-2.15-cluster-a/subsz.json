@@ -1,0 +1,15 @@
+{
+  "server_id": "NCVOYOJCJGRZFLXLSXYYENXAYOOAWPV4GYQOILZTRI7XQC4KQKL7PVNY",
+  "now": "2026-10-27T21:08:49.93239Z",
+  "num_subscriptions": 119,
+  "num_cache": 7,
+  "num_inserts": 119,
+  "num_removes": 0,
+  "num_matches": 9,
+  "cache_hit_rate": 0.2222222222222222,
+  "max_fanout": 2,
+  "avg_fanout": 1.4285714285714286,
+  "total": 0,
+  "offset": 0,
+  "limit": 1024
+}
