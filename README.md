@@ -7,19 +7,19 @@ Relay is a local-first desktop IDE for exploring, debugging, testing, and monito
 ## Preview
 
 <p align="center">
-  <img src="docs/images/welcome.png" alt="Welcome screen" width="720" />
+  <a href="docs/images/welcome.png"><img src="docs/images/welcome.png" alt="Welcome screen" width="720" /></a>
 </p>
 
 <p align="center">
-  <img src="docs/images/live-messages.png" alt="Live messages" width="720" />
+  <a href="docs/images/live-messages.png"><img src="docs/images/live-messages.png" alt="Live messages" width="720" /></a>
 </p>
 
 <p align="center">
-  <img src="docs/images/publisher.png" alt="Publisher" width="720" />
+  <a href="docs/images/publisher.png"><img src="docs/images/publisher.png" alt="Publisher" width="720" /></a>
 </p>
 
 <p align="center">
-  <img src="docs/images/jetstream-stream.png" alt="JetStream stream overview" width="720" />
+  <a href="docs/images/jetstream-stream.png"><img src="docs/images/jetstream-stream.png" alt="JetStream stream overview" width="720" /></a>
 </p>
 
 ## Architecture
@@ -101,4 +101,4 @@ See [docs/production-readiness.md](docs/production-readiness.md) for the verifie
 
 ## License
 
-Source is provided for the Relay project; licensing can be finalized before public release.
+[Apache License 2.0](LICENSE) — Copyright 2026 Bisar Omer
