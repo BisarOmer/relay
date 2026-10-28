@@ -40,11 +40,11 @@ Platform packaging is implemented via Tauri; signed/notarized installers are not
 
 ## Download and install
 
-Prebuilt apps are in [`releases/`](releases/).
+Prebuilt apps are on the [GitHub Releases](https://github.com/BisarOmer/relay/releases) page.
 
 ### macOS (Apple Silicon)
 
-1. Download [Relay_0.1.0_aarch64.dmg](releases/Relay_0.1.0_aarch64.dmg).
+1. Download the latest `.dmg` from [Releases](https://github.com/BisarOmer/relay/releases/latest).
 2. Open the disk image and drag **Relay** into **Applications**.
 3. Before opening the app, remove the download quarantine (required for this unsigned build):
 
@@ -56,7 +56,7 @@ xattr -cr /Applications/Relay.app
 
 If you skipped step 3, macOS often shows **"Relay" is damaged and can't be opened** — the app is fine; Gatekeeper is blocking an unsigned download. Run the same command, then open it again.
 
-This DMG is for Apple Silicon only (M1/M2/M3/M4). Intel Mac, Windows, and Linux installers are not in `releases/` yet — build from source with `make build` on those platforms.
+Current macOS builds are Apple Silicon only (M1/M2/M3/M4). Intel Mac, Windows, and Linux: build from source with `make build`.
 
 ## Prerequisites
 
