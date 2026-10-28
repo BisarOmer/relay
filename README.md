@@ -46,16 +46,15 @@ Prebuilt apps are in [`releases/`](releases/).
 
 1. Download [Relay_0.1.0_aarch64.dmg](releases/Relay_0.1.0_aarch64.dmg).
 2. Open the disk image and drag **Relay** into **Applications**.
-3. Launch Relay from Applications.
-
-The build is **not signed or notarized**, so macOS Gatekeeper may block the first open:
-
-- In Finder, right-click Relay → **Open**, then confirm **Open**, or
-- Clear the quarantine flag once:
+3. Before opening the app, remove the download quarantine (required for this unsigned build):
 
 ```bash
-xattr -dr com.apple.quarantine /Applications/Relay.app
+xattr -cr /Applications/Relay.app
 ```
+
+4. Open Relay from Applications.
+
+If you skipped step 3, macOS often shows **"Relay" is damaged and can't be opened** — the app is fine; Gatekeeper is blocking an unsigned download. Run the same command, then open it again.
 
 This DMG is for Apple Silicon only (M1/M2/M3/M4). Intel Mac, Windows, and Linux installers are not in `releases/` yet — build from source with `make build` on those platforms.
 
