@@ -5,7 +5,7 @@ Last updated: 2026-10-27. The verified checklist, evidence and blockers are in
 
 ## Implemented
 
-### Broker IDE (NATS)
+### Message Broker IDE (NATS)
 - Tauri + React desktop, Go sidecar over NDJSON stdio IPC, SQLite with
   embedded migrations, OS keychain for secrets
 - Connections: create, edit, duplicate, delete (typed confirmation for

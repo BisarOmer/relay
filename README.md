@@ -4,10 +4,28 @@ Relay is a local-first desktop IDE for exploring, debugging, testing, and monito
 
 **Current focus:** NATS IDE workflows plus an **Insights** observability workspace (monitoring HTTP collector, topology, snapshots, findings). RabbitMQ and Kafka adapters are planned.
 
+## Preview
+
+<p align="center">
+  <img src="docs/images/welcome.png" alt="Welcome screen" width="720" />
+</p>
+
+<p align="center">
+  <img src="docs/images/live-messages.png" alt="Live messages" width="720" />
+</p>
+
+<p align="center">
+  <img src="docs/images/publisher.png" alt="Publisher" width="720" />
+</p>
+
+<p align="center">
+  <img src="docs/images/jetstream-stream.png" alt="JetStream stream overview" width="720" />
+</p>
+
 ## Architecture
 
 ```text
-React UI  ↔  Tauri host  ↔  Go engine (sidecar)  ↔  Brokers
+React UI  ↔  Tauri host  ↔  Go engine (sidecar)  ↔ Message Brokers
 ```
 
 IPC is versioned NDJSON over stdin/stdout. See [docs/architecture.md](docs/architecture.md) and [docs/ipc-protocol.md](docs/ipc-protocol.md).

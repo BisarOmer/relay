@@ -26,7 +26,7 @@ export function Sidebar() {
         {!collapsed && (
           <div className="min-w-0 leading-tight">
             <div className="text-[13px] font-semibold tracking-tight">Relay</div>
-            <div className="text-[10.5px] text-fg-subtle">Broker IDE</div>
+            <div className="text-[10.5px] text-fg-subtle">Message Broker IDE</div>
           </div>
         )}
       </div>
