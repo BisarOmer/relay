@@ -7,6 +7,13 @@ import { Button } from "./button";
 const FOCUSABLE =
   'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
+function firstContentFocusable(panel: HTMLElement): HTMLElement | null {
+  const preferred = panel.querySelector<HTMLElement>("[autofocus], [data-autofocus]");
+  if (preferred) return preferred;
+  const items = Array.from(panel.querySelectorAll<HTMLElement>(FOCUSABLE));
+  return items.find((el) => !el.hasAttribute("data-dialog-close")) ?? items[0] ?? null;
+}
+
 /**
  * Accessible modal: focus is moved inside, trapped while open, and restored
  * to the previously focused element on close. Escape and backdrop close it.
@@ -33,6 +40,8 @@ export function Dialog({
   initialFocus?: React.RefObject<HTMLElement | null>;
 }) {
   const panelRef = useRef<HTMLDivElement>(null);
+  const onCloseRef = useRef(onClose);
+  onCloseRef.current = onClose;
   const titleId = useId();
   const descId = useId();
 
@@ -40,12 +49,12 @@ export function Dialog({
     if (!open) return;
     const previous = document.activeElement as HTMLElement | null;
     const panel = panelRef.current;
-    const target = initialFocus?.current ?? panel?.querySelector<HTMLElement>(FOCUSABLE) ?? panel;
+    const target = initialFocus?.current ?? (panel ? firstContentFocusable(panel) : null) ?? panel;
     target?.focus();
     function onKey(e: KeyboardEvent) {
       if (e.key === "Escape") {
         e.stopPropagation();
-        onClose();
+        onCloseRef.current();
       }
       if (e.key === "Tab" && panel) {
         const items = Array.from(panel.querySelectorAll<HTMLElement>(FOCUSABLE));
@@ -66,11 +75,16 @@ export function Dialog({
       document.removeEventListener("keydown", onKey, true);
       previous?.focus?.();
     };
-  }, [open, onClose, initialFocus]);
+    // Intentionally omit onClose: callers often pass an inline function, and
+    // re-running this effect would steal focus back to the dialog chrome.
+  }, [open, initialFocus]);
 
   if (!open) return null;
   return createPortal(
-    <div className="fixed inset-0 z-50 flex items-start justify-center bg-black/45 p-4 pt-[12vh] animate-fade-in" onMouseDown={onClose}>
+    <div
+      className="fixed inset-0 z-50 flex items-start justify-center bg-black/45 p-4 pt-[12vh] animate-fade-in"
+      onMouseDown={() => onCloseRef.current()}
+    >
       <div
         ref={panelRef}
         role="dialog"
@@ -98,7 +112,7 @@ export function Dialog({
               </div>
             )}
           </div>
-          <Button variant="ghost" size="icon-sm" aria-label="Close" onClick={onClose}>
+          <Button data-dialog-close variant="ghost" size="icon-sm" aria-label="Close" onClick={() => onCloseRef.current()}>
             <X className="h-4 w-4" />
           </Button>
         </div>
