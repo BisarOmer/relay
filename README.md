@@ -38,6 +38,27 @@ IPC is versioned NDJSON over stdin/stdout. See [docs/architecture.md](docs/archi
 
 Platform packaging is implemented via Tauri; signed/notarized installers are not claimed until completed.
 
+## Download and install
+
+Prebuilt apps are in [`releases/`](releases/).
+
+### macOS (Apple Silicon)
+
+1. Download [Relay_0.1.0_aarch64.dmg](releases/Relay_0.1.0_aarch64.dmg).
+2. Open the disk image and drag **Relay** into **Applications**.
+3. Launch Relay from Applications.
+
+The build is **not signed or notarized**, so macOS Gatekeeper may block the first open:
+
+- In Finder, right-click Relay → **Open**, then confirm **Open**, or
+- Clear the quarantine flag once:
+
+```bash
+xattr -dr com.apple.quarantine /Applications/Relay.app
+```
+
+This DMG is for Apple Silicon only (M1/M2/M3/M4). Intel Mac, Windows, and Linux installers are not in `releases/` yet — build from source with `make build` on those platforms.
+
 ## Prerequisites
 
 - Go 1.26+ (as declared in `engine/go.mod`)
